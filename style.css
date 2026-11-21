@@ -1,3 +1,7 @@
+@font-face { font-family: "A2Z"; src: url("https://cdn.jsdelivr.net/gh/yellopencil/yellopencil-webfonts@v1.10.1/fonts/a2z/A2Z-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "A2Z"; src: url("https://cdn.jsdelivr.net/gh/yellopencil/yellopencil-webfonts@v1.10.1/fonts/a2z/A2Z-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "A2Z"; src: url("https://cdn.jsdelivr.net/gh/yellopencil/yellopencil-webfonts@v1.10.1/fonts/a2z/A2Z-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
 :root {
   --paper: #f6f3ed;
   --white: #fffdf8;
@@ -5,8 +9,7 @@
   --muted: #5d5a51;
   --line: #d9d1c2;
   --red: #933c2d;
-  --sans: "DM Sans", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
-  --serif: "Instrument Serif", Georgia, serif;
+  --sans: "A2Z", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -21,8 +24,8 @@ a:focus-visible { outline: 2px solid #ab5827; outline-offset: 4px; }
 .top nav a { position: relative; color: var(--muted); text-decoration: none; font-size: .9rem; padding: .35rem 0; }
 .top nav a[aria-current], .top nav a:hover { color: var(--red); }
 .top nav a[aria-current]::after { content: ""; position: absolute; bottom: 0; inset-inline: 0; height: 1px; background: currentColor; }
-.brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--ink); font: 400 1.75rem/1 var(--serif); text-decoration: none; }
-.seal { display: grid; place-items: center; width: 1.9rem; aspect-ratio: 1; border-radius: .27rem; color: white; background: var(--red); font: 700 1rem/1 "Noto Sans KR", sans-serif; }
+.brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--ink); font: 700 1.35rem/1 var(--sans); text-decoration: none; }
+.seal { display: grid; place-items: center; width: 1.9rem; aspect-ratio: 1; border-radius: .27rem; color: white; background: var(--red); font: 700 1rem/1 var(--sans); }
 
 h1, h2, h3, p { margin: 0; }
 h2 { font-size: clamp(1.55rem, 3vw, 2.35rem); font-weight: 700; line-height: 1.25; letter-spacing: -.06em; }
@@ -44,8 +47,8 @@ h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.035em; }
   background: linear-gradient(90deg, #1c1917e8, #1d19175c 66%, #1d191727), linear-gradient(0deg, #1c1917b8, transparent 72%), url("assets/forbidden-city.jpg") 63% center / cover;
 }
 .hero .kicker, .hero small { color: #f0c494; }
-.hero h1 { margin-block: .5rem 1.15rem; font: 400 clamp(5.5rem, 13vw, 11rem)/.75 var(--serif); letter-spacing: -.038em; }
-.hero h1 i { display: block; margin-bottom: .12em; font-size: .42em; }
+.hero h1 { margin-block: .5rem 1.15rem; font: 700 clamp(4rem, 13vw, 10rem)/.86 var(--sans); letter-spacing: -.038em; }
+.hero h1 i { display: block; margin-bottom: .32em; font-size: .36em; font-weight: 600; font-style: normal; }
 .hero-copy > p:not(.kicker) { color: #fff4e4; font-size: clamp(1rem, 1.7vw, 1.15rem); }
 .actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.3rem; }
 .button { display: inline-block; border: 1px solid #fff3dcad; padding: .55rem 1rem; color: #fff8ea; border-radius: .25rem; text-decoration: none; font-weight: 600; }
@@ -69,7 +72,7 @@ h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.035em; }
 }
 .day-card { display: flex; flex-direction: column; min-height: 15rem; color: var(--ink); text-decoration: none; }
 .day-card:hover, .quick-item:hover { border-color: var(--red); }
-.chapter { margin-top: .6rem; font: 400 1.65rem/1 var(--serif); color: var(--red); }
+.chapter { margin-top: .6rem; font: 600 1.2rem/1.2 var(--sans); color: var(--red); }
 .day-card strong { font-size: 1.22rem; letter-spacing: -.04em; }
 .day-card p, .quick-item span { color: var(--muted); }
 .day-card p { margin: .45rem 0 1rem; font-size: .9375rem; }
@@ -127,3 +130,14 @@ h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.035em; }
 @media (max-width: 650px) {
   .slots li { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
 }
+
+.research-section { margin-block: 2rem 0; }
+.research-section h2 { margin-bottom: .75rem; }
+.research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: .75rem; }
+.research-grid .panel p { margin-block: .55rem; color: var(--muted); }
+.research-grid .panel h3 { margin: .25rem 0 .45rem; }
+.flight-list { display: grid; gap: .75rem; margin-top: 1rem; }
+.flight-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: .5rem 1rem; }
+.flight-time { font-weight: 700; font-variant-numeric: tabular-nums; }
+@media (max-width: 650px) { .flight-row { grid-template-columns: 1fr; } }
+.notice + .hotel-grid { margin-top: 1rem; }
