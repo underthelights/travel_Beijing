@@ -1,15 +1,16 @@
-@font-face { font-family: "A2Z"; src: url("https://cdn.jsdelivr.net/gh/yellopencil/yellopencil-webfonts@v1.10.1/fonts/a2z/A2Z-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "A2Z"; src: url("https://cdn.jsdelivr.net/gh/yellopencil/yellopencil-webfonts@v1.10.1/fonts/a2z/A2Z-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
-@font-face { font-family: "A2Z"; src: url("https://cdn.jsdelivr.net/gh/yellopencil/yellopencil-webfonts@v1.10.1/fonts/a2z/A2Z-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Gowun+Batang:wght@400;700&display=swap");
 
 :root {
-  --paper: #f6f3ed;
-  --white: #fffdf8;
-  --ink: #24241f;
-  --muted: #5d5a51;
-  --line: #d9d1c2;
+  --paper: #f8f5ed;
+  --white: #fffdfa;
+  --ink: #182230;
+  --muted: #525c66;
+  --line: #ddd5c8;
   --red: #933c2d;
-  --sans: "A2Z", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --sans: "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --display: "Gowun Batang", Georgia, serif;
+  --display-en: "Cormorant Garamond", Georgia, serif;
 }
 
 * { box-sizing: border-box; }
@@ -18,17 +19,17 @@ a { color: var(--red); text-underline-offset: .24em; }
 a:hover { color: var(--ink); }
 a:focus-visible { outline: 2px solid #ab5827; outline-offset: 4px; }
 .wrap { width: min(1200px, calc(100% - 3rem)); margin-inline: auto; }
-.masthead { border-bottom: 1px solid var(--line); }
-.top { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.top nav { display: flex; flex-wrap: wrap; gap: .5rem 1.65rem; }
-.top nav a { position: relative; color: var(--muted); text-decoration: none; font-size: .9rem; padding: .35rem 0; }
-.top nav a[aria-current], .top nav a:hover { color: var(--red); }
-.top nav a[aria-current]::after { content: ""; position: absolute; bottom: 0; inset-inline: 0; height: 1px; background: currentColor; }
-.brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--ink); font: 700 1.35rem/1 var(--sans); text-decoration: none; }
+.masthead { position: relative; z-index: 10; padding-top: .65rem; }
+.top { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .55rem .85rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--white); }
+.top nav { display: flex; flex-wrap: wrap; gap: .2rem .35rem; }
+.top nav a { position: relative; color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 650; padding: .35rem .6rem; border-radius: 1rem; }
+.top nav a:hover { background: var(--paper); color: var(--ink); }
+.top nav a[aria-current] { background: var(--ink); color: var(--white); }
+.brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--ink); font: 700 1.42rem/1 var(--display-en); text-decoration: none; white-space: nowrap; }
 .seal { display: grid; place-items: center; width: 1.9rem; aspect-ratio: 1; border-radius: .27rem; color: white; background: var(--red); font: 700 1rem/1 var(--sans); }
 
 h1, h2, h3, p { margin: 0; }
-h2 { font-size: clamp(1.55rem, 3vw, 2.35rem); font-weight: 700; line-height: 1.25; letter-spacing: -.06em; }
+h2 { font-size: clamp(1.55rem, 3vw, 2.35rem); font-weight: 700; line-height: 1.25; letter-spacing: -.048em; }
 h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.035em; }
 .kicker, small { font-size: .875rem; font-weight: 700; letter-spacing: .095em; color: var(--red); }
 .hero {
@@ -47,8 +48,8 @@ h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.035em; }
   background: linear-gradient(90deg, #1c1917e8, #1d19175c 66%, #1d191727), linear-gradient(0deg, #1c1917b8, transparent 72%), url("assets/forbidden-city.jpg") 63% center / cover;
 }
 .hero .kicker, .hero small { color: #f0c494; }
-.hero h1 { margin-block: .5rem 1.15rem; font: 700 clamp(4rem, 13vw, 10rem)/.86 var(--sans); letter-spacing: -.038em; }
-.hero h1 i { display: block; margin-bottom: .32em; font-size: .36em; font-weight: 600; font-style: normal; }
+.hero h1 { margin-block: .35rem 1rem; font: 700 clamp(4rem, 12vw, 9rem)/.82 var(--display-en); letter-spacing: -.038em; }
+.hero h1 i { display: block; margin-bottom: .32em; font-size: .36em; font-weight: 600; font-style: italic; }
 .hero-copy > p:not(.kicker) { color: #fff4e4; font-size: clamp(1rem, 1.7vw, 1.15rem); }
 .actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.3rem; }
 .button { display: inline-block; border: 1px solid #fff3dcad; padding: .55rem 1rem; color: #fff8ea; border-radius: .25rem; text-decoration: none; font-weight: 600; }
@@ -72,7 +73,7 @@ h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.035em; }
 }
 .day-card { display: flex; flex-direction: column; min-height: 15rem; color: var(--ink); text-decoration: none; }
 .day-card:hover, .quick-item:hover { border-color: var(--red); }
-.chapter { margin-top: .6rem; font: 600 1.2rem/1.2 var(--sans); color: var(--red); }
+.chapter { margin-top: .6rem; font: 700 1.45rem/1.15 var(--display-en); color: var(--red); }
 .day-card strong { font-size: 1.22rem; letter-spacing: -.04em; }
 .day-card p, .quick-item span { color: var(--muted); }
 .day-card p { margin: .45rem 0 1rem; font-size: .9375rem; }
@@ -103,7 +104,7 @@ h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.035em; }
 @media (max-width: 650px) {
   .wrap { width: calc(100% - 1.5rem); }
   .top { align-items: flex-start; flex-direction: column; gap: .35rem; padding-block: .75rem; }
-  .top nav { gap: .35rem 1rem; }
+  .top nav { gap: .15rem .25rem; }
   .hero { min-height: 485px; padding-bottom: 2.5rem; gap: 1.4rem; }
   .hero.with-photo { background-position: center, center, 68% center; }
   .day-links, .day-grid, .booking-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -249,3 +250,33 @@ h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.035em; }
   .planner-dates a:last-child { grid-column: 1 / -1; }
   .planner-steps li { grid-template-columns: minmax(4.65rem, 5.6rem) minmax(0,1fr); }
 }
+
+button, input, select, textarea { font-family: inherit; }
+.home-page .hero { gap: 1.6rem; min-height: clamp(34rem, 66vw, 43rem); border-radius: 1.1rem; }
+.home-page .hero.with-photo { background-position: center, center, 64% 58%; }
+.home-page .hero-copy { max-width: 36rem; }
+.home-page .day-links a { padding: .65rem .8rem; border-radius: .5rem; }
+.home-page .actions .button { border-radius: 999px; }
+.home-section { margin-block: clamp(2rem, 5vw, 3.5rem); }
+.home-section h2, .intro h1, .planner-hero h1 { font-family: var(--display); letter-spacing: -.036em; }
+.intro { padding-block: clamp(2rem, 5vw, 4rem) 1.6rem; }
+.intro h1 { font-size: clamp(2.2rem, 5.5vw, 4rem); }
+.planner-hero h1 { font-size: clamp(2.15rem, 5vw, 4rem); }
+.day-card, .quick-item, .panel { border-radius: .65rem; }
+.day-card { min-height: 13.5rem; }
+@media (max-width: 650px) {
+  .top { padding: .65rem; }
+  .top nav { flex-wrap: nowrap; width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: thin; }
+  .top nav a { flex: 0 0 auto; white-space: nowrap; padding: .35rem .52rem; }
+  .home-page .hero { min-height: 35rem; padding-bottom: 2.55rem; border-radius: .75rem; }
+  .home-page .day-links a { padding: .5rem .65rem; }
+  .home-page .hero h1 { font-size: clamp(4.5rem, 23vw, 7rem); }
+}
+
+.tour-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; margin-top: .9rem; }
+.tour-card > h3 { margin-top: .35rem; }
+.tour-card .tour-price { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 750; color: var(--red); margin: .4rem 0 .65rem; }
+.tour-price small { display: block; color: var(--muted); font-size: .85rem; letter-spacing: 0; }
+.tour-card .quote-facts, .tour-route .quote-facts { margin-bottom: .85rem; }
+.tour-route { margin-top: .85rem; }
+@media (max-width: 700px) { .tour-grid { grid-template-columns: minmax(0, 1fr); } }
