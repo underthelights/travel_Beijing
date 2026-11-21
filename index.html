@@ -5,16 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f8f4e9">
 <meta name="description" content="2026년 12월 13–17일 베이징 여행 가이드">
-<title>베이징 4박 5일 | Winter in Beijing</title>
+<title>베이징 4박 5일 | 베이징 여행</title>
 <link rel="stylesheet" href="taiwan-theme.css?v=5682cb1">
-<link rel="stylesheet" href="beijing-theme.css?v=1">
+<link rel="stylesheet" href="beijing-theme.css?v=2">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script defer src="travel-map.js?v=1"></script>
-<script defer src="beijing-nav.js?v=1"></script>
+<script defer src="beijing-nav.js?v=2"></script>
 </head>
 <body class="home-page">
-<nav class="nav" aria-label="주 메뉴"><a href="index.html" class="logo" aria-label="Winter in Beijing 홈"><span class="beijing-seal" aria-hidden="true">京</span>Winter in Beijing</a><a href="index.html" class="active" aria-current=page>홈</a><a href="day-13.html" class="d1">1일차</a><a href="day-14.html" class="d2">2일차</a><a href="day-15.html" class="d3">3일차</a><a href="day-16.html" class="d4">4일차</a><a href="day-17.html" class="d5">5일차</a><a href="itinerary.html" class="">전체 일정</a><a href="stay.html" class="nav-stay-link">숙소</a><a href="attractions.html" class="">명소·예약</a><a href="flights.html" class="">항공편</a><a href="booking.html" class="">교통·투어</a><a href="prep.html" class="">준비물</a><a href="references.html" class="nav-notes-link">베이징 노트</a></nav>
+<nav class="nav beijing-nav" aria-label="주 메뉴"><a href="index.html" class="logo" aria-label="베이징 여행 홈"><span class="beijing-seal" aria-hidden="true">京</span>베이징 여행</a>
+  <button class="nav-menu-toggle" type="button" aria-controls="trip-menu" aria-expanded="false" hidden>메뉴</button>
+  <div class="nav-links" id="trip-menu"><a href="index.html" class="active" aria-current=page>홈</a><a href="day-13.html" class="d1">1일차</a><a href="day-14.html" class="d2">2일차</a><a href="day-15.html" class="d3">3일차</a><a href="day-16.html" class="d4">4일차</a><a href="day-17.html" class="d5">5일차</a><a href="itinerary.html" class="">전체 일정</a><a href="stay.html" class="nav-stay-link">숙소</a><a href="attractions.html" class="">명소·예약</a><a href="flights.html" class="">항공편</a><a href="booking.html" class="">교통·투어</a><a href="prep.html" class="">준비물</a><a href="references.html" class="nav-notes-link">베이징 노트</a></div>
+</nav>
 <main class="home-shell fly-home">
   <section class="taiwan-stage" aria-labelledby="hTitle">
     <figure class="stage-media">
@@ -23,16 +26,16 @@
     <div class="stage-glass" aria-hidden="true"></div>
 
     <div class="stage-cities" aria-label="이번 여정 도시">
-      <span>WANGFUJING</span>
-      <span>MUTIANYU</span>
-      <span>BEIJING</span>
+      <span>왕푸징</span>
+      <span>무톈위</span>
+      <span>베이징</span>
     </div>
 
     <div class="stage-copy">
-      <span class="hero-kicker">DECEMBER 13–17, 2026 · PEK IN / OUT</span>
+      <span class="hero-kicker">2026년 12월 13–17일 · 4박 5일</span>
       <h1 id="hTitle" class="editorial-title">
-        <span class="title-minor">Winter in</span>
-        <span>Beijing</span>
+        <span class="title-minor">겨울의</span>
+        <span>베이징</span>
       </h1>
       <p id="hSub">선월드 왕푸징에서 머물며 만리장성과 베이징 중앙축을 걷는 4박 5일.</p>
       <div class="hero-actions">
@@ -43,7 +46,7 @@
     </div>
 
     <div class="stage-status">
-      <span>Flight <b>OZ333 / OZ334</b></span>
+      <span>항공편 <b>OZ333 / OZ334</b></span>
       <span>확정 <b id="progressText">2/5 · 항공 · 숙소</b></span>
       <i class="exp-bar"><i id="progressBar" style="width:40%"></i></i>
     </div>
@@ -54,7 +57,7 @@
       <a href="day-15.html"><span>03</span><b>자금성</b><em>구도심</em></a>
       <a href="day-16.html"><span>04</span><b>천단공원</b><em>산책</em></a>
       <a href="day-17.html"><span>05</span><b>서우두</b><em>귀국</em></a>
-      <a href="#worldMap"><span>MAP</span><b>지도</b><em>동선</em></a>
+      <a href="#worldMap"><span>동선</span><b>지도</b><em>동선</em></a>
     </div>
 
     <div class="stage-wordmark" aria-hidden="true">BEIJING</div>
@@ -64,16 +67,16 @@
 
   <section class="home-brief" aria-label="여행 브리프">
     <div class="home-brief-copy">
-      <span class="mini-label">TRIP BRIEF</span>
+      <span class="mini-label">여행 요약</span>
       <h2>왕푸징에 머물고,<br>하루씩 동선을 펼친다.</h2>
       <p>인천과 서우두를 왕복합니다. 선월드에서 매일 출발하며, 근교와 시내 관람을 다른 날로 나눴습니다.</p>
     </div>
-    <div class="home-brief-grid"><a class="home-brief-card" href="flights.html"><span>FLIGHT</span><b>OZ333 / OZ334</b><em>인천과 베이징 서우두 왕복</em></a><a class="home-brief-card" href="stay.html#confirmed-stay"><span>STAY</span><b>선월드 호텔 왕푸징</b><em>12월 13일 체크인 · 17일 체크아웃</em></a><a class="home-brief-card" href="booking.html#wall-tour"><span>TOUR</span><b>만리장성 · 이화원</b><em>2인 픽업형과 왕징 집결형 비교</em></a><a class="home-brief-card" href="prep.html#apps"><span>APP TIPS</span><b>지도 · 결제 · 배달</b><em>고덕지도·알리페이·위챗·메이투안</em></a></div>
+    <div class="home-brief-grid"><a class="home-brief-card" href="flights.html"><span>항공편</span><b>OZ333 / OZ334</b><em>인천과 베이징 서우두 왕복</em></a><a class="home-brief-card" href="stay.html#confirmed-stay"><span>숙소</span><b>선월드 호텔 왕푸징</b><em>12월 13일 체크인 · 17일 체크아웃</em></a><a class="home-brief-card" href="booking.html#wall-tour"><span>근교 투어</span><b>만리장성 · 이화원</b><em>2인 픽업형과 왕징 집결형 비교</em></a><a class="home-brief-card" href="prep.html#apps"><span>현지 앱</span><b>지도 · 결제 · 배달</b><em>고덕지도·알리페이·위챗·메이투안</em></a></div>
   </section>
 
   <section class="home-chapters" aria-label="여정 챕터">
     <div class="chapter-copy">
-      <span class="mini-label">FIVE DAYS</span>
+      <span class="mini-label">날짜별 일정</span>
       <h2>왕푸징에서 만리장성까지, 베이징의 닷새.</h2>
     </div>
     <div class="chapter-deck beijing-chapters"><a class="chapter-card" href="day-13.html"><img src="assets/wangfujing.jpg" loading="lazy" alt=""><span>12.13 일</span><b>왕푸징 도착</b><em>15:20 서우두 도착 후 선월드 체크인.</em></a><a class="chapter-card" href="day-14.html"><img src="assets/wall.jpg" loading="lazy" alt=""><span>12.14 월</span><b>무톈위 만리장성 · 이화원</b><em>왕복 케이블카와 하이뎬의 황실 정원.</em></a><a class="chapter-card" href="day-15.html"><img src="assets/forbidden-city.jpg" loading="lazy" alt=""><span>12.15 화</span><b>천안문 · 자금성 · 경산공원</b><em>베이징 중앙축을 남쪽 오문부터 걷는 날.</em></a><a class="chapter-card" href="day-16.html"><img src="assets/temple.jpg" loading="lazy" alt=""><span>12.16 수</span><b>천단공원 · 첸먼</b><em>기년전과 다스란. 학교 승인 시 오후 북경대 방문.</em></a><a class="chapter-card" href="day-17.html"><img src="assets/wangfujing.jpg" loading="lazy" alt=""><span>12.17 목</span><b>체크아웃 · 귀국</b><em>선월드에서 11:15 출발 목표. 15:35 서우두 출발.</em></a></div>
@@ -81,7 +84,7 @@
 
   <section class="home-live-board" aria-label="진행 보드">
     <div class="board-copy">
-      <span class="mini-label">LIVE BOARD</span>
+      <span class="mini-label">예약 현황</span>
       <h2>예약과 준비 현황</h2>
       <p>항공편과 숙소는 확정. 자금성, 장성 투어와 북경대 방문을 준비합니다.</p>
     </div>
@@ -90,7 +93,7 @@
 
   <section class="home-map-panel" id="worldMap">
     <div class="map-copy">
-      <span class="mini-label">ROUTE MAP</span>
+      <span class="mini-label">여행 지도</span>
       <h2>서우두에서 왕푸징까지.</h2>
       <p>지도 핀을 누르면 일차별 상세 일정으로 이동합니다. 연결선은 방문 순서입니다.</p>
       <a class="hero-btn primary" href="beijing-trip.kml" download>Google Maps KML</a>
@@ -98,6 +101,6 @@
     <div id="homeMap" aria-label="베이징 전체 동선 지도"></div>
   </section>
 </main>
-<footer class="beijing-footer"><span>Winter in Beijing · 2026.12.13–17</span><a href="references.html#photo-credits">사진 출처</a></footer>
+<footer class="beijing-footer"><span>베이징 여행 · 2026.12.13–17</span><a href="references.html#photo-credits">사진 출처</a></footer>
 </body>
 </html>

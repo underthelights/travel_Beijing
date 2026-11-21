@@ -11,6 +11,26 @@ const placeKinds = {
 
 const entries = [];
 let hideTimer;
+const navigation = document.querySelector('.beijing-nav');
+const menuButton = navigation?.querySelector('.nav-menu-toggle');
+const collapsedNavigation = window.matchMedia('(max-width: 1080px)');
+
+function setMainMenu(open) {
+  if (!menuButton) return;
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.textContent = open ? '닫기' : '메뉴';
+  if (!open) closeMenus();
+}
+
+if (menuButton) {
+  navigation.classList.add('is-menu-ready');
+  menuButton.hidden = false;
+  menuButton.addEventListener('click', () => {
+    setMainMenu(menuButton.getAttribute('aria-expanded') !== 'true');
+  });
+  collapsedNavigation.addEventListener('change', () => setMainMenu(false));
+}
+
 function closeMenus() {
   for (const { toggle, menu } of entries) {
     menu.classList.remove('show');
@@ -66,7 +86,7 @@ for (const [day, counts] of Object.entries(navCounts)) {
   document.body.append(menu);
   const entry = { wrapper, toggle, menu };
   entries.push(entry);
-  wrapper.addEventListener('pointerenter', (event) => {
+  link.addEventListener('pointerenter', (event) => {
     if (event.pointerType !== 'mouse') return;
     clearTimeout(hideTimer);
     openMenu(entry);
@@ -88,13 +108,20 @@ for (const [day, counts] of Object.entries(navCounts)) {
 }
 document.addEventListener('click', (event) => {
   if (!event.target.closest('.nav-day, .day-pop')) closeMenus();
+  if (collapsedNavigation.matches && !event.target.closest('.beijing-nav, .day-pop')) {
+    setMainMenu(false);
+  }
 });
 document.addEventListener('keydown', (event) => {
   if (event.key !== 'Escape') return;
   const entry = entries.find(({ menu }) => menu.classList.contains('show'));
-  if (!entry) return;
-  closeMenus();
-  entry.toggle.focus();
+  if (entry) {
+    closeMenus();
+    entry.toggle.focus();
+  } else if (collapsedNavigation.matches && menuButton?.getAttribute('aria-expanded') === 'true') {
+    setMainMenu(false);
+    menuButton.focus();
+  }
 });
 window.addEventListener('resize', closeMenus);
 window.addEventListener('scroll', closeMenus, true);

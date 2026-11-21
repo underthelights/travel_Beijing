@@ -18,10 +18,6 @@
   flex: 0 0 auto;
 }
 
-body .nav { white-space: nowrap; }
-body .nav > a { flex: 0 0 auto; }
-.home-page .nav .logo, .day-page .nav .logo { gap: .45rem; }
-.home-page .nav .nav-stay-link { margin-left: auto; }
 .home-page .stage-route { grid-template-columns: repeat(6,minmax(0,1fr)); }
 .home-page .stage-route a { padding-inline: .8rem; }
 .beijing-chapters { grid-template-columns: repeat(3,minmax(0,1fr)); }
@@ -84,16 +80,7 @@ body.day-page .planner-calendar { background: rgba(255,250,239,.75); margin-top:
 @media(max-width: 980px) {
   .beijing-chapters { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
-@media (min-width: 721px) and (max-width: 1120px) {
-  .home-page .nav { gap: 16px; overflow-x: auto; }
-  .home-page .nav .logo { position: static; transform: none; }
-}
 @media(max-width: 720px) {
-  .home-page .nav { gap: 1rem; justify-content: flex-start; }
-  .home-page .nav a.active { display: none !important; }
-  .home-page .nav a[href="itinerary.html"]:not(.logo):not(.active),
-  .home-page .nav a[href="prep.html"]:not(.logo):not(.active) { display: inline-flex !important; }
-  .home-page .nav a[href="itinerary.html"] { margin-left: auto; }
   .home-page .taiwan-stage { min-height: 920px; }
   .home-page .stage-route { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .home-page .stage-status { bottom: 224px; }
@@ -187,3 +174,287 @@ body.day-page .planner-calendar { background: rgba(255,250,239,.75); margin-top:
 }
 .stop-map-button { display: inline-block; margin-top: .45rem; }
 .nav .nav-day { flex: 0 0 auto; }
+
+@font-face {
+  font-family: "A2Z";
+  src: url("assets/fonts/A2Z-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "A2Z";
+  src: url("assets/fonts/A2Z-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --beijing-text: #30251d;
+  --beijing-subtext: #594b40;
+  --beijing-link: #674123;
+  --beijing-surface: #fffdf8;
+  --beijing-rule: #e0d5c7;
+  --beijing-font: "A2Z", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+body.beijing-secondary, body.day-page, body.home-page {
+  --sans: var(--beijing-font);
+  --font-body: var(--beijing-font);
+  --font-display: var(--beijing-font);
+  --fly-muted: var(--beijing-subtext);
+  --muted: var(--beijing-subtext);
+  font-family: var(--beijing-font);
+  font-size: 1rem;
+  line-height: 1.7;
+  letter-spacing: 0;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+body :is(button, input, select, textarea) { font-family: inherit; }
+body :is(a, button, input, select, summary):focus-visible {
+  outline: 2px solid var(--beijing-link);
+  outline-offset: 3px;
+}
+
+body.beijing-secondary > .nav.beijing-nav,
+body.day-page > .nav.beijing-nav,
+body.home-page > .nav.beijing-nav {
+  min-height: 64px !important;
+  padding: .5rem clamp(.9rem, 3vw, 2.25rem) !important;
+  justify-content: space-between !important;
+  gap: .75rem !important;
+  overflow: visible !important;
+  border-bottom: 1px solid var(--beijing-rule) !important;
+  background: #fffaf2f5 !important;
+  box-shadow: 0 2px 10px #30251d09 !important;
+  z-index: 1000 !important;
+}
+
+body.beijing-secondary > .nav.beijing-nav .logo,
+body.day-page > .nav.beijing-nav .logo,
+body.home-page > .nav.beijing-nav .logo {
+  position: static;
+  transform: none;
+  display: inline-flex;
+  gap: .55rem;
+  align-items: center;
+  margin: 0 !important;
+  color: var(--beijing-text) !important;
+  font: 700 1.06rem/1.3 var(--beijing-font) !important;
+  letter-spacing: -.02em !important;
+  flex: none !important;
+}
+
+.nav.beijing-nav .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .2rem .28rem;
+}
+
+body > .nav.beijing-nav .nav-links a:not(.logo),
+body > .nav.beijing-nav .nav-menu-toggle {
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  min-height: 42px !important;
+  padding: .4rem .57rem !important;
+  border: 1px solid transparent !important;
+  border-radius: .45rem !important;
+  color: var(--beijing-text) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font: 700 .95rem/1.25 var(--beijing-font) !important;
+  letter-spacing: 0 !important;
+  text-shadow: none !important;
+  text-transform: none;
+}
+
+body > .nav.beijing-nav .nav-links a[aria-current],
+body > .nav.beijing-nav .nav-links a:hover,
+body > .nav.beijing-nav .nav-menu-toggle[aria-expanded="true"] {
+  border-color: var(--beijing-rule) !important;
+  background: #eee2d2 !important;
+}
+
+body > .nav.beijing-nav .nav-links .nav-day {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0 !important;
+}
+
+body > .nav.beijing-nav .nav-day-caret {
+  min-width: 26px;
+  min-height: 42px !important;
+  color: var(--beijing-text) !important;
+  font-size: .85rem !important;
+}
+
+body > .nav.beijing-nav .nav-menu-toggle { display: none !important; }
+
+body .day-pop a { font: 700 .95rem/1.45 var(--beijing-font) !important; }
+
+body.beijing-secondary main.wrap {
+  width: min(1120px, calc(100% - 48px)) !important;
+}
+
+body.beijing-secondary main.wrap :is(.intro,.ready-hero,.stay-hero,.mobility-hero,.planner-hero) h1,
+body.day-page .day-hero-copy h1 {
+  color: var(--beijing-text) !important;
+  font: 700 clamp(2rem, 4vw, 3.65rem)/1.2 var(--beijing-font) !important;
+  letter-spacing: -.055em !important;
+  text-shadow: none !important;
+  word-break: keep-all !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+body.beijing-secondary main.wrap :is(.intro,.ready-hero,.stay-hero,.mobility-hero,.planner-hero) p:not(.kicker),
+body.day-page .day-hero-copy p {
+  color: var(--beijing-subtext) !important;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+  word-break: keep-all !important;
+}
+
+body :is(.home-brief-copy, .chapter-copy, .board-copy) h2,
+body.beijing-secondary main :is(h2, h3),
+body.day-page main :is(h2, h3) {
+  font-family: var(--beijing-font) !important;
+  font-weight: 700;
+  letter-spacing: -.035em;
+}
+
+body.beijing-secondary main h2 { font-size: clamp(1.45rem, 2.35vw, 2rem) !important; line-height: 1.3; }
+body.beijing-secondary main h3 { font-size: 1.15rem !important; line-height: 1.4; }
+
+body.beijing-secondary main :is(.panel,.dashboard-panel,.booking-grid article,.hotel-grid article,.prep-list li) {
+  color: var(--beijing-text);
+  background: var(--beijing-surface);
+  border-color: var(--beijing-rule);
+  border-radius: .65rem;
+}
+
+body.beijing-secondary main :is(.panel,.dashboard-panel,.research-section,.prep-stage,.pku-box) p,
+body.day-page main :is(.stop-description,.detail p:not(.kicker)) {
+  color: var(--beijing-subtext);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+body.beijing-secondary main :is(.panel,.dashboard-panel,.prep-stage,.reference-list) a:not(.primary-action,.hotel-rate) {
+  color: var(--beijing-link);
+  text-underline-offset: .22em;
+}
+
+body.beijing-secondary .research-grid { gap: 1rem; }
+body.beijing-secondary :is(.research-section,.prep-stage) { margin-block: clamp(1.9rem, 4vw, 3.15rem) 0; }
+body.beijing-secondary .panel :is(ol,ul) { padding-inline-start: 1.35rem; }
+body.beijing-secondary .panel li + li { margin-top: .45rem; }
+
+body.beijing-secondary .prep-nav { gap: .45rem; margin-block: 1.15rem; }
+body.beijing-secondary .prep-nav a {
+  padding: .55rem .75rem;
+  color: var(--beijing-link);
+  background: var(--beijing-surface);
+  border-color: var(--beijing-rule);
+  border-radius: .45rem;
+  font-weight: 700;
+}
+body.beijing-secondary .prep-list { gap: .7rem; }
+body.beijing-secondary .prep-list li { padding: .9rem 1rem; }
+body.beijing-secondary .prep-list label { grid-template-columns: 1.25rem minmax(0,1fr); gap: .75rem; }
+body.beijing-secondary .prep-list input { width: 1.2rem; height: 1.2rem; margin-top: .28rem; }
+body.beijing-secondary .prep-list label > span > span { margin-top: .26rem; line-height: 1.65; }
+body.beijing-secondary .prep-list label [lang] { display: inline; color: inherit; }
+body.beijing-secondary .prep-list li:has(input:checked) { background: #edf4e9; border-color: #adbea7; }
+body.beijing-secondary .prep-source { margin-inline-start: 2rem; }
+body.beijing-secondary .ready-hero .prep-progress span { color: var(--beijing-subtext); }
+body.beijing-secondary .ready-hero .desk-stack { min-width: 0; }
+
+.home-page .stage-copy .editorial-title {
+  font: 700 clamp(3.55rem, 8.1vw, 7rem)/.98 var(--beijing-font);
+  letter-spacing: -.065em;
+  color: var(--beijing-text);
+  text-shadow: 0 1px 16px #fffaf2ce;
+}
+.home-page .editorial-title .title-minor {
+  font-family: inherit;
+  font-size: .5em;
+  line-height: 1.23;
+  letter-spacing: -.04em;
+}
+.home-page .stage-copy :is(.hero-kicker, p) {
+  color: var(--beijing-text);
+  font-size: clamp(.97rem, 1.5vw, 1.1rem);
+  text-shadow: 0 1px 6px #fffdf8, 0 0 12px #fffdf8;
+}
+.home-page .stage-status span,
+.home-page .stage-route :is(span, em) { font-size: .76rem; color: var(--beijing-subtext); }
+.home-page .stage-status span { text-transform: none; }
+.home-page .stage-route b { font-size: 1.05rem; }
+
+.guide-reservation {
+  padding: clamp(1rem, 2.4vw, 1.6rem);
+  border: 1px solid var(--beijing-rule);
+  border-radius: .8rem;
+  background: var(--beijing-surface);
+}
+.guide-reservation .guide-meta {
+  margin: .2rem 0 1.05rem;
+  font-weight: 700;
+  color: var(--beijing-link);
+}
+.guide-reservation ol { margin-block: .85rem 1rem; padding-inline-start: 1.35rem; }
+.guide-reservation h3 { margin-block: 1.2rem .4rem; }
+.guide-reservation p + p { margin-block-start: .75rem; }
+.guide-reservation li { padding-inline-start: .25rem; }
+.guide-reservation li + li { margin-top: .56rem; }
+.guide-reservation .guide-sources { margin-block-start: 1.2rem; }
+.guide-reservation .guide-sources a { color: var(--beijing-link); }
+
+@media (max-width: 1080px) {
+  body > .nav.beijing-nav:not(.is-menu-ready) { flex-wrap: wrap; }
+  body > .nav.beijing-nav .nav-menu-toggle:not([hidden]) {
+    display: inline-flex !important;
+    border-color: var(--beijing-rule) !important;
+    min-width: 72px;
+    min-height: 44px !important;
+    margin-inline-start: auto;
+  }
+  body > .nav.beijing-nav.is-menu-ready .nav-links {
+    position: absolute;
+    inset: 100% clamp(.8rem, 3vw, 2rem) auto auto;
+    width: min(21rem, calc(100vw - 1.6rem));
+    max-height: calc(100dvh - 78px);
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: .3rem;
+    padding: .65rem;
+    border: 1px solid var(--beijing-rule);
+    border-radius: .75rem;
+    background: var(--beijing-surface);
+    box-shadow: 0 16px 32px #30251d22;
+  }
+  body > .nav.beijing-nav .nav-menu-toggle[aria-expanded="false"] + .nav-links { display: none; }
+  body > .nav.beijing-nav .nav-links a:not(.logo) { justify-content: flex-start; min-height: 44px !important; }
+  .nav.beijing-nav .nav-day > a { flex: 1; }
+  body > .nav.beijing-nav .nav-day-caret { min-width: 40px; }
+}
+
+@media (max-width: 720px) {
+  body.beijing-secondary main.wrap { width: calc(100% - 28px) !important; padding-inline: 0 !important; }
+  body.beijing-secondary main.wrap :is(.intro, .ready-hero, .stay-hero, .mobility-hero) {
+    padding: 1.1rem !important;
+  }
+  body.beijing-secondary .ready-hero .desk-stack { display: none; }
+  body.beijing-secondary .prep-source { margin-inline-start: 0; }
+  .home-page .stage-copy .editorial-title { font-size: clamp(3.3rem, 12vw, 5.1rem); }
+}
