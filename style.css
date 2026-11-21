@@ -141,3 +141,17 @@ h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.035em; }
 .flight-time { font-weight: 700; font-variant-numeric: tabular-nums; }
 @media (max-width: 650px) { .flight-row { grid-template-columns: 1fr; } }
 .notice + .hotel-grid { margin-top: 1rem; }
+
+#stay-map { min-height: 22rem; border-radius: .35rem; background: #e9e5da; }
+#stay-map[hidden], .compare-card[hidden] { display: none; }
+.map-caption, #stay-count { margin-block: .5rem 1rem; color: var(--muted); font-size: .9rem; }
+.stay-filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: .6rem; align-items: end; }
+.stay-filters label { display: grid; gap: .2rem; font-size: .875rem; font-weight: 700; }
+.stay-filters select, .stay-filters button { width: 100%; border: 1px solid var(--line); border-radius: .3rem; padding: .55rem; font: inherit; background: var(--white); color: var(--ink); }
+.stay-filters .stay-check { display: flex; align-items: center; min-height: 2.5rem; gap: .3rem; }
+.quote-price { margin-block: .75rem .3rem; }
+.quote-price strong { display: block; color: var(--red); font-size: clamp(1.45rem, 3vw, 2rem); }
+.quote-price small { color: var(--muted); letter-spacing: 0; }
+.quote-facts { display: grid; grid-template-columns: auto 1fr; gap: .25rem 1rem; margin-block: .6rem 0; }
+.quote-facts dt { font-weight: 700; }
+.quote-facts dd { margin: 0; }
