@@ -82,9 +82,6 @@ h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.035em; }
 .detail-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: .75rem; margin-top: 1.25rem; }
 .panel h2 { margin: .25rem 0 .65rem; }
 .panel > p:not(.kicker) { margin-bottom: .75rem; color: var(--muted); }
-.steps { padding: 0; list-style: none; margin: 0; }
-.steps li { padding-block: .85rem; display: flex; gap: .9rem; align-items: baseline; border-bottom: 1px solid var(--line); }
-.steps li span { color: var(--red); font: 400 1.55rem/1 var(--serif); }
 .map-links { margin-top: .9rem; }
 .pager { display: flex; justify-content: space-between; margin-block: 1.5rem; }
 .hotel-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -112,4 +109,21 @@ h3 { font-size: 1.25rem; line-height: 1.4; letter-spacing: -.035em; }
 }
 @media (max-width: 390px) {
   .booking-grid { grid-template-columns: 1fr; }
+}
+
+.schedule-note { font-size: .9rem; }
+.slots { list-style: none; padding: 0; margin: .5rem 0 0; }
+.slots li { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: .8rem; padding-block: .9rem; border-top: 1px solid var(--line); }
+.slot-time { color: var(--red); font-size: .92rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.slot-kind { color: var(--muted); font-size: .875rem; }
+.slots h3 { margin: .15rem 0 .25rem; }
+.slots p { color: var(--muted); }
+.hotel-card { display: flex; flex-direction: column; align-items: start; }
+.hotel-card h2 { font-size: clamp(1.35rem, 2.7vw, 1.85rem); margin: 0; }
+.hotel-grid .hotel-area { font-weight: 700; }
+.hotel-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem 1rem; margin-top: auto; padding-top: .75rem; }
+.hotel-rate { padding: .35rem .65rem; border: 1px solid var(--red); border-radius: .25rem; font-weight: 700; text-decoration: none; }
+.hotel-rate:hover { background: var(--red); color: white; }
+@media (max-width: 650px) {
+  .slots li { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
 }
